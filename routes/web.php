@@ -12,12 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix'=>'admin','namespace'=>'admin'],function (){
+    Route::get('/Dashboard','DashboardController@index')->name('admin.Dashboard');
+    Route::get('/send_document','DocumentController@Document_show')->name('admin.Document_show');
+    Route::post('/send_document/store','DocumentController@Document_show_store')->name('admin.Document_show.store');
 
+
+
+
+
+
+});
 
 Route::group(['prefix'=>'user','namespace'=>'user'],function (){
 
     Route::get('/Dashboard','DashboardController@index')->name('user.dashboard');
-
     Route::get('/one','Documents_receivedController@one')->name('user.one');
     Route::get('/two','Documents_receivedController@two')->name('user.two');
     Route::get('/three','Documents_receivedController@three')->name('user.three');

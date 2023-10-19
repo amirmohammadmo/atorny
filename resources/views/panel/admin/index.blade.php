@@ -72,14 +72,14 @@
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
         <!-- Menu -->
-@include('panel.layouts.sidebar')
+@include('panel.admin.layouts.sidebar')
         <!-- / Menu -->
 
         <!-- Layout container -->
         <div class="layout-page">
             <!-- Navbar -->
 
-@include('panel.layouts.navbar')
+@include('panel.admin.layouts.navbar')
             <!-- / Navbar -->
 
             <!-- Content wrapper -->

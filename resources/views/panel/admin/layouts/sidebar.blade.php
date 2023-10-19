@@ -49,7 +49,7 @@
     <ul class="menu-inner py-1 ps ps--active-y">
         <!-- Dashboard -->
         <li class="menu-item">
-            <a href="{{Route('admin.Dashboard')}}" class="menu-link">
+            <a href="#" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">داشبورد</div>
             </a>
@@ -59,24 +59,24 @@
         <li class="menu-item open" style="">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">انبار داری</div>
+                <div data-i18n="Layouts">مدارک</div>
             </a>
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{Route('admin.store.category')}}" class="menu-link">
-                        <div data-i18n="Without menu">وارد کردن نوع دسته بندی</div>
+                    <a href="{{Route('admin.Document_show')}}" class="menu-link">
+                        <div data-i18n="Without menu">ارسال مدارک</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{Route('admin.enter_product')}}" class="menu-link">
-                        <div data-i18n="Without navbar">وارد کردن محصول </div>
+                    <a href="#" class="menu-link">
+                        <div data-i18n="Without navbar">مدارک دریافتی </div>
                     </a>
                 </li>
         </li>
         <li class="menu-item">
-            <a href="{{Route('admin.Report_from_warehouse')}}" class="menu-link">
-                <div data-i18n="Without navbar">گزارش از انبار </div>
+            <a href="#" class="menu-link">
+                <div data-i18n="Without navbar">مشاهده ی پرونده ها </div>
             </a>
         </li>
 
@@ -87,12 +87,12 @@
         <li class="menu-item open" style="">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">اطلاعات</div>
+                <div data-i18n="Layouts">مدیریت کاربران</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{Route('admin.Enter_the_output')}}" class="menu-link">
-                        <div data-i18n="Without menu">وارد کردن خروجی</div>
+                    <a href="#" class="menu-link">
+                        <div data-i18n="Without menu">مشاهده ی کاربران</div>
                     </a>
                 </li>
 
@@ -100,12 +100,7 @@
 
 
             </ul>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="{{Route('admin.Output_report')}}" class="menu-link">
-                        <div data-i18n="Without menu">گزارش خروجی ها</div>
-                    </a>
-                </li>
+
 
 
 

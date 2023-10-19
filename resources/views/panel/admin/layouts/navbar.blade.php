@@ -28,14 +28,14 @@
                     </button>
                     <ul class="dropdown-menu" style="">
                         <li>
-                            <a href="{{Route('admin.invoice.clear')}}" class="dropdown-item d-flex align-items-center"><i class="bx bx-chevron-right scaleX-n1-rtl"></i>  حذف گزینه های فاکتور</a>
+                            <a href="#" class="dropdown-item d-flex align-items-center"><i class="bx bx-chevron-right scaleX-n1-rtl"></i>  حذف گزینه های فاکتور</a>
                         </li>
 
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a href="{{Route('admin.invoice.output')}}" class="dropdown-item d-flex align-items-center" target="_blank" ><i class="bx bx-chevron-right scaleX-n1-rtl"></i>ایجاد فاکتور</a>
+                            <a href="#" class="dropdown-item d-flex align-items-center" target="_blank" ><i class="bx bx-chevron-right scaleX-n1-rtl"></i>ایجاد فاکتور</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
+                                    <span class="fw-semibold d-block"></span>
                                     <small class="text-muted"></small>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{Route('logout')}}">
+                        <a class="dropdown-item" href="#">
                             <i class="bx bx-power-off me-2"></i>
                             <span class="align-middle">خروج</span>
                         </a>
