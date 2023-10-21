@@ -16,6 +16,7 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function (){
     Route::get('/Dashboard','DashboardController@index')->name('admin.Dashboard');
     Route::get('/send_document','DocumentController@Document_show')->name('admin.Document_show');
     Route::post('/send_document/store','DocumentController@Document_show_store')->name('admin.Document_show.store');
+    Route::get('/get_document/{file}','DocumentController@show')->name('admin.show');
 
 
 
