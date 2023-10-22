@@ -1,4 +1,6 @@
 @extends('panel.user.index')
 @section('contend')
-    دادخواست بدوی و تجدید نظر
+    @include('panel.user.layouts.body_page',$file)
+
+
 @endsection

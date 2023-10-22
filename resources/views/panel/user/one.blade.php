@@ -1,8 +1,5 @@
 @extends('panel.user.index')
 @section('contend')
-@foreach($file as $fil)
+    @include('panel.user.layouts.body_page',$file)
 
-    {{$fil->name}}
-
-@endforeach
 @endsection

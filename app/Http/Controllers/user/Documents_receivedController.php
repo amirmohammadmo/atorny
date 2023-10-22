@@ -17,32 +17,43 @@ class Documents_receivedController extends Controller
 
     public function two()
     {
-        return View('panel.user.two');
+        $file=File::where('user_id','=',1)->where('Category_id','=',2)->get();
+        return View('panel.user.two',compact('file'));
     }
 
     public function three()
     {
-        return View('panel.user.three');
+        $file=File::where('user_id','=',1)->where('Category_id','=',3)->get();
+
+        return View('panel.user.three',compact('file'));
     }
 
     public function four()
     {
-        return View('panel.user.four');
+        $file=File::where('user_id','=',1)->where('Category_id','=',4)->get();
+
+        return View('panel.user.four',compact('file'));
     }
 
     public function five()
-    {
-        return View('panel.user.five');
+
+
+    { $file=File::where('user_id','=',1)->where('Category_id','=',5)->get();
+        return View('panel.user.five',compact('file'));
     }
 
     public function six()
     {
-        return View('panel.user.six');
+        $file=File::where('user_id','=',1)->where('Category_id','=',6)->get();
+
+        return View('panel.user.six',compact('file'));
     }
 
     public function seven()
     {
-        return View('panel.user.seven');
+        $file=File::where('user_id','=',1)->where('Category_id','=',7)->get();
+
+        return View('panel.user.seven',compact('file'));
     }
 
     public function eight()
@@ -54,4 +65,8 @@ class Documents_receivedController extends Controller
     {
         return View('panel.user.nine');
     }
+public function download(File $file){
+
+        return $file->download();
+}
 }

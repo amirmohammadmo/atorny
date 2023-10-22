@@ -37,6 +37,7 @@ Route::group(['prefix'=>'user','namespace'=>'user'],function (){
     Route::get('/seven','Documents_receivedController@seven')->name('user.seven');
     Route::get('/eight','Documents_receivedController@eight')->name('user.eight');
     Route::get('/nine','Documents_receivedController@nine')->name('user.nine');
+    Route::get('/download/{file}','Documents_receivedController@download')->name('user.download');
 
 
 });

@@ -1,4 +1,6 @@
 @extends('panel.user.index')
 @section('contend')
-    ابلاغیه و اختاریه
+    @include('panel.user.layouts.body_page',$file)
+
+
 @endsection
