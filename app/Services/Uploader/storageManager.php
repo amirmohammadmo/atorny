@@ -12,6 +12,13 @@ class storageManager
     {
         return Storage::disk('public')->putFileAs('file',$file,$name);
     }
+    public function putFileUser(string $name,uploadedFile $file)
+    {
+        return Storage::disk('public')->putFileAs('file',$file,$name);
+    }
+    public function deleteFile(string $name){
+        return Storage::disk('public')->delete('file/'.$name);
+    }
     public function getFile(string $name){
 
         return  Storage::disk('public')->download('file/'.$name);

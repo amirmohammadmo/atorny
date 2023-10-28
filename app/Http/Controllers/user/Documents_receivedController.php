@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendMail;
+use App\Jobs\SendMaile;
 use App\Models\category;
 use App\Models\File;
+use App\Models\File_user;
+use App\Services\Uploader\Uploader;
 use Illuminate\Http\Request;
+use App\Mail;
 
 class Documents_receivedController extends Controller
 {
@@ -57,16 +62,49 @@ class Documents_receivedController extends Controller
     }
 
     public function eight()
+
     {
-        return View('panel.user.eighte');
+        $file_users=File_user::where('user_id','=',1)->get();
+        //dd($file_users);
+        return View('panel.user.eighte',compact('file_users'));
     }
 
     public function nine()
     {
         return View('panel.user.nine');
     }
-public function download(File $file){
+    public function download(File $file){
 
         return $file->download();
-}
+    }
+
+    public function downloadUserFile(File_user $file){
+
+        return $file->download();
+    }
+    public function file_delete(File_user $file){
+
+        $file->delete();
+        return redirect()->back()->with('success','فایل با موفقیت حذف شد');
+    }
+    public function send_protest(Uploader $uploader,Request $request){
+        $request->validate([
+            'file' => 'required|file|mimetypes:application/pdf,image/jpeg|max:2550',
+            'type'=>'required'
+
+        ], [
+            'file.required' => 'وارد کردن فایل اجباری می باشد',
+            'file.file' => 'فایل حتما باید از نوع فایل باشد',
+            'file.mimetypes' => 'فایل باید از نوع pdf یا عکس باشد',
+            'file.max' => 'فایل ارسالی نباید بیش تر از 2 مگابایت باشد',
+            'type.required' => 'وارد کردن فایل اجباری می باشد',
+
+        ]);
+
+        $uploader->UploadUserFile();
+        SendMail::dispatch('admin@gmail.com',new Mail\SendFileFromUser());
+        return redirect()->back()->with('success','فایل با موفقیت بارگزاری شد');
+
+    }
+
 }

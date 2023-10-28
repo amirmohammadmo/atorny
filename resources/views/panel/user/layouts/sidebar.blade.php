@@ -113,7 +113,7 @@
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="{{Route('user.eight')}}" class="menu-link">
-                        <div data-i18n="Without menu">اعتراض</div>
+                        <div data-i18n="Without menu">ارسال مدارک</div>
                     </a>
                 </li>
 
@@ -121,17 +121,12 @@
 
 
             </ul>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="{{Route('user.nine')}}" class="menu-link">
-                        <div data-i18n="Without menu">دیگر مدارک</div>
-                    </a>
-                </li>
 
 
 
 
-            </ul>
+
+
 
         </li>
 

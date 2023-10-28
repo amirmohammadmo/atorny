@@ -11,7 +11,10 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     public function file(){
-        return $this->belongsToMany(file::class,'user_file','user_id','file_id');
+        return $this->belongsToMany(File::class,'user_file','user_id','file_id');
+    }
+    public function fileUser(){
+        return $this->belongsToMany(File_user::class,'user_file','user_id','file_id');
     }
     use HasApiTokens, HasFactory, Notifiable;
 

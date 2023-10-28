@@ -5,10 +5,13 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\File;
+use App\Models\File_user;
 use App\Models\User;
+use App\Services\Uploader\storageManager;
 use App\Services\Uploader\Uploader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 use function Symfony\Component\String\u;
 
 class DocumentController extends Controller
@@ -53,6 +56,35 @@ class DocumentController extends Controller
         public function show(File $file){
 
          return $file->download();
+
+
+        }
+        public function Documents_received(){
+        $file=File_user::all();
+        $user=User::all();
+        return View('panel.admin.Documents_received',compact('file','user'));
+        }
+        public function Documents_received_download(File_user $id){
+       return $id->download();
+
+        }
+        public function Documents_users(){
+        $users=User::all();
+        return View('panel.admin.documents_user',compact('users'));
+        }
+        public function Documents_users_show($id){
+        $document_send=File::where('user_id','=',1)->get();
+        $document_reseave=File_user::where('user_id','=',1)->get();
+        return View('panel.admin.document_show',compact('document_reseave','document_send'));
+        }
+        public function delete_user_sends_file(File_user $id){
+        $id->delete();
+        return redirect()->back()->with('success','فایل با موفقیت حذف شد');
+
+        }
+        public function delete_admin_sends_file(File $id){
+        $id->delete();
+        return redirect()->back()->with('success','فایل با موفقیت حذف شد');
 
 
         }

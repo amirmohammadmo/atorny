@@ -69,13 +69,13 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{Route('admin.Documents_received.show')}}" class="menu-link">
                         <div data-i18n="Without navbar">مدارک دریافتی </div>
                     </a>
                 </li>
         </li>
         <li class="menu-item">
-            <a href="#" class="menu-link">
+            <a href="{{Route('admin.Documents_users')}}" class="menu-link">
                 <div data-i18n="Without navbar">مشاهده ی پرونده ها </div>
             </a>
         </li>
