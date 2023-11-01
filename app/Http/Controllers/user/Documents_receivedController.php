@@ -64,7 +64,7 @@ class Documents_receivedController extends Controller
     public function eight()
 
     {
-        $file_users=File_user::where('user_id','=',1)->get();
+        $file_users=File_user::orderBy('created_at','Desc')->where('user_id','=',1)->get();
         //dd($file_users);
         return View('panel.user.eighte',compact('file_users'));
     }
@@ -89,7 +89,7 @@ class Documents_receivedController extends Controller
     }
     public function send_protest(Uploader $uploader,Request $request){
         $request->validate([
-            'file' => 'required|file|mimetypes:application/pdf,image/jpeg|max:2550',
+            'file' => 'required|file|mimetypes:application/pdf,image/jpeg,audio/mpeg,audio/3gpp,audio/wav|max:9550',
             'type'=>'required'
 
         ], [
@@ -106,5 +106,9 @@ class Documents_receivedController extends Controller
         return redirect()->back()->with('success','فایل با موفقیت بارگزاری شد');
 
     }
+    public function Attorney_contract(){
+        $file=File::where('user_id','=',1)->where('Category_id','=',8)->get();
+        return View('panel.user.Attorney_contract',compact('file'));
 
+        }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\File;
 use App\Models\File_user;
+use App\Models\Process;
 use App\Models\User;
 use App\Services\Uploader\storageManager;
 use App\Services\Uploader\Uploader;
@@ -29,7 +30,7 @@ class DocumentController extends Controller
 
         //validate
         $request->validate([
-            'file' => 'required|file|mimetypes:application/pdf,image/jpeg|max:2550',
+            'file' => 'required|file|mimetypes:application/pdf,image/jpeg|max:9550',
             'category' => 'required',
             'user' => 'required'
 
@@ -42,15 +43,9 @@ class DocumentController extends Controller
             'user.required' => 'انتخاب کردن کاربر اجباری می باشد',
 
         ]);
-
-
         //store
-
-
         $uploader->upload();
         return redirect()->back()->with('success','فایل با موفقیت بارگزاری شد');
-
-
         }
 
         public function show(File $file){
@@ -60,7 +55,7 @@ class DocumentController extends Controller
 
         }
         public function Documents_received(){
-        $file=File_user::all();
+        $file=File_user::all()->sortByDesc('created_at');
         $user=User::all();
         return View('panel.admin.Documents_received',compact('file','user'));
         }
@@ -73,9 +68,10 @@ class DocumentController extends Controller
         return View('panel.admin.documents_user',compact('users'));
         }
         public function Documents_users_show($id){
-        $document_send=File::where('user_id','=',1)->get();
-        $document_reseave=File_user::where('user_id','=',1)->get();
-        return View('panel.admin.document_show',compact('document_reseave','document_send'));
+        $document_send=File::where('user_id','=',$id)->get();
+        $document_reseave=File_user::orderBy('created_at','Desc')->where('user_id','=',$id)->get();
+        $process=Process::orderBy('created_at','Desc')->where('user_id','=',$id)->get();
+        return View('panel.admin.document_show',compact('document_reseave','document_send','process'));
         }
         public function delete_user_sends_file(File_user $id){
         $id->delete();

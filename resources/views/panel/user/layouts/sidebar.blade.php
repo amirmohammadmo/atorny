@@ -98,6 +98,11 @@
                         <div data-i18n="Without navbar">سایر اوراق</div>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="{{Route('user.Attorney contract')}}" class="menu-link">
+                        <div data-i18n="Without navbar">قرارداد وکالت</div>
+                    </a>
+                </li>
         </li>
 
 

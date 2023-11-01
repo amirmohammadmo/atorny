@@ -16,6 +16,9 @@ class User extends Authenticatable
     public function fileUser(){
         return $this->belongsToMany(File_user::class,'user_file','user_id','file_id');
     }
+    public function process(){
+        $this->hasMany(Process::class);
+    }
     use HasApiTokens, HasFactory, Notifiable;
 
     /**

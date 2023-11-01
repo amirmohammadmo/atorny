@@ -45,7 +45,7 @@
                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$file_user->type}}</strong></td>
                 <td>
                    <a href="{{Route('user.downloadUserFile',$file_user->id)}}"> <button type="button" class="btn rounded-pill btn-success">دانلود</button></a>
-                   <a href="{{Route('user.file_delete',$file_user->id)}}"> <button type="button" class="btn rounded-pill btn-danger">حذف</button></a>
+
                 </td>
             </tr>
             @endforeach
@@ -72,4 +72,5 @@
     </div>
 </div>
 
+</div>
 </div>

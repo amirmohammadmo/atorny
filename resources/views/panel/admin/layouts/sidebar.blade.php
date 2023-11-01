@@ -73,6 +73,11 @@
                         <div data-i18n="Without navbar">مدارک دریافتی </div>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="{{Route('admin.process.show')}}" class="menu-link">
+                        <div data-i18n="Without navbar">ارسال گزارش پرونده  </div>
+                    </a>
+                </li>
         </li>
         <li class="menu-item">
             <a href="{{Route('admin.Documents_users')}}" class="menu-link">
