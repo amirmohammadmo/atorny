@@ -11,6 +11,7 @@ use App\Models\Process;
 use App\Models\User;
 use App\Services\Notification\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class Uploader
@@ -66,7 +67,7 @@ class Uploader
     private function saveFileIntoDatabaseForUser()
     {
         $file = new File_user([
-            'user_id' => 1,
+            'user_id' => Auth::user()->id,
             'type' => $this->request->input('type'),
             'name'=>$this->file->getClientOriginalName(),
             'status' => 0

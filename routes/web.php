@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//َAuth
+Route::get('/register','AuthController@register')->name('register');
+Route::post('/register/store','AuthController@register_store')->name('register.store');
+Route::get('/logout','AuthController@logout')->name('logout');
+
+
 Route::group(['prefix'=>'admin','namespace'=>'admin'],function (){
     Route::get('/Dashboard','DashboardController@index')->name('admin.Dashboard');
     Route::get('/send_document','DocumentController@Document_show')->name('admin.Document_show');
@@ -29,7 +35,7 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function (){
     Route::get('/process/download/{process}','ProcessController@download')->name('admin.process.download');
 });
 
-Route::group(['prefix'=>'user','namespace'=>'user'],function (){
+Route::group(['prefix'=>'user','namespace'=>'user','middleware' => 'UserAuth'],function (){
 
     Route::get('/Dashboard','DashboardController@index')->name('user.dashboard');
     Route::get('/one','Documents_receivedController@one')->name('user.one');

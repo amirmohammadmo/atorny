@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">test</span>
+                                    <span class="fw-semibold d-block">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
                                     <small class="text-muted"></small>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{Route('logout')}}">
                             <i class="bx bx-power-off me-2"></i>
                             <span class="align-middle">خروج</span>
                         </a>

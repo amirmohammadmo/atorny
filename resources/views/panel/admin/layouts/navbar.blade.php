@@ -74,7 +74,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{Route('logout')}}">
                             <i class="bx bx-power-off me-2"></i>
                             <span class="align-middle">خروج</span>
                         </a>
