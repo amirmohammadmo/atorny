@@ -33,6 +33,9 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function (){
     Route::get('/process','ProcessController@index')->name('admin.process.show');
     Route::post('/process/store','ProcessController@process_store')->name('admin.process.store');
     Route::get('/process/download/{process}','ProcessController@download')->name('admin.process.download');
+    Route::get('/users_show','UserController@index')->name('admin.user.show');
+    Route::get('/users/edit/{id}','UserController@UserEdit')->name('admin.user.edit');
+    Route::post('/users/edit/store/{id}','UserController@UserEditStore')->name('admin.user.edit.Store');
 });
 
 Route::group(['prefix'=>'user','namespace'=>'user','middleware' => 'UserAuth'],function (){

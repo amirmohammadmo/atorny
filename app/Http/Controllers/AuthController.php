@@ -48,7 +48,7 @@ class AuthController extends Controller
                 'phone'=>$request->input('phone'),
                 'National_Code'=>$request->input('National_Code'),
                 'role'=>2,
-                'password'=>encrypt($request->input('National_Code')),
+                'password'=>encrypt($request->input('password')),
             ]
 
         );
